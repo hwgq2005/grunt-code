@@ -1,9 +1,7 @@
 build.js
 r.js
-server.js
 /node_modules
 /sass
-
-/build-html
+/html-build
 *.mp3
 *.md
