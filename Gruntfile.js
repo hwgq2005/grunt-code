@@ -125,6 +125,14 @@ module.exports = function(grunt) {
 			    }
 			}
 		},
+		copy: {
+		     main: {
+		       expand: true,
+		       cwd: 'app/',  //指定源文件目录
+		       src: ['**','!**/*.coffee'],  //不复制coffee文件
+		       dest: 'html-copy/'    //复制到dest目录下
+		    }
+	    },
 		watch: {
 			files: ['sass/*.scss','app/js/*.js','app/js/*.js','app/css/*.css','app/images/*'],
 			tasks: ['sass','concat','uglify','cssmin','imagemin']
@@ -139,9 +147,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-include-replace');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// 默认被执行的任务列表。
-	grunt.registerTask('default', ['sass','uglify', 'concat','cssmin','imagemin','includereplace']);
+	grunt.registerTask('default', ['sass','uglify', 'concat','cssmin','copy','imagemin','includereplace']);
 
 };
