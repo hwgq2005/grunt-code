@@ -9,7 +9,8 @@ module.exports = function(grunt) {
 
 		//生成目录
 		dir: 'html-build', 
-		//只合并js 注意：合并顺序打乱
+
+		//只合并js 注意：合并顺序打乱，所以要按照依赖的js要先后排序
 		concat: {
 			//添加头部注释
 			options: {
