@@ -3,5 +3,6 @@ r.js
 /node_modules
 /sass
 /html-build
+/html-copy
 *.mp3
 *.md
