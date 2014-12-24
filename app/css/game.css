@@ -151,6 +151,30 @@ body {
       font-size: 18px;
       line-height: 28px; }
 
+.icon-1 {
+  background: url(../images/icon-1.png) no-repeat -1px 2px;
+  width: 100px;
+  height: 20px;
+  font-size: 2px; }
+
+.icon-2 {
+  background: url(../images/icon-1.png) no-repeat -1px 2px;
+  width: 100px;
+  height: 30px;
+  font-size: 2px; }
+
+.icon-3 {
+  font-size: 2px; }
+
+.home-hwg {
+  font-size: hwg; }
+
+.home-hwc {
+  font-size: hwc; }
+
+.home-hwx {
+  font-size: hwx; }
+
 @-webkit-keyframes animations {
   0% {
     background-position: 50% 50%; }
