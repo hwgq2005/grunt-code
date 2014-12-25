@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %><%= grunt.template.today("yyyy-mm-dd") %>  \n*/'
 			},
 			dist: {
-				src: ['<%= baseUrl %>/js/zepto.min.js','<%= baseUrl %>/js/howler.min.js','<%= baseUrl %>/js/main.js'],
+				src: ['<%= baseUrl %>/js/zepto.min.js','<%= baseUrl %>/js/shake.js'],
 				dest: '<%= baseUrl %>/js/dist/app.js'
 			}
 		},
@@ -52,28 +52,44 @@ module.exports = function(grunt) {
 			//   ],
 			// }
 		},
-		sass: {
-	      //target
-	      // 编译
-	      build: {
-	        options: {
-	          paths: ['sass/'],
-	          yuicompress: true
-	        },
-	        files: {
-	          '<%= baseUrl %>/css/game.css': ['sass/main.scss']
-	        }
-	        // files: [
-	        //     {
-	        //         expand: true,
-	        //         cwd: 'sass/',
-	        //         src: ['*.sass'],
-	        //         dest: 'html/style/',
-	        //         ext: '.css'
-	        //     }
-	        // ]
-	      }
-	    },
+		// sass: {
+	 //      //target
+	 //      // 编译
+	 //      build: {
+	 //        options: {
+	 //          paths: ['sass/'],
+	 //          yuicompress: true
+	 //        },
+	 //        files: {
+	 //          '<%= baseUrl %>/css/game.css': ['sass/main.scss']
+	 //        }
+	 //        // files: [
+	 //        //     {
+	 //        //         expand: true,
+	 //        //         cwd: 'sass/',
+	 //        //         src: ['*.sass'],
+	 //        //         dest: 'html/style/',
+	 //        //         ext: '.css'
+	 //        //     }
+	 //        // ]
+	 //      }
+	 //    },
+	    compass: {                  // Task
+		    dist: {                   // Target
+		      options: {              // Target options
+		        sassDir: 'sass',
+		        cssDir: '<%= baseUrl %>/css/',
+		        environment: 'development' //development or production
+		      }
+		    }
+		    ,
+		    dev: {                    // Another target
+		      options: {
+		        sassDir: 'sass',
+		        cssDir: '<%= baseUrl %>/css/'
+		      }
+		    }
+		  },
 		cssmin: {
 	         // minify
 	         options: {
@@ -135,7 +151,7 @@ module.exports = function(grunt) {
 	    },
 		watch: {
 			files: ['sass/*.scss','app/js/*.js','app/js/*.js','app/css/*.css','app/images/*'],
-			tasks: ['sass','concat','uglify','cssmin','imagemin']
+			tasks: ['compass','concat','uglify','cssmin','imagemin']
 		}
 
 	});
@@ -143,7 +159,7 @@ module.exports = function(grunt) {
 	// 加载包含 "uglify" 任务的插件。
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-include-replace');
@@ -151,6 +167,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// 默认被执行的任务列表。
-	grunt.registerTask('default', ['sass','uglify', 'concat','cssmin','copy','imagemin','includereplace']);
+	grunt.registerTask('default', ['compass','uglify', 'concat','cssmin','copy','imagemin','includereplace']);
 
 };

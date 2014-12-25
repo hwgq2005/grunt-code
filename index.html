@@ -2,54 +2,66 @@
 <html lang="en">
 	<head>
 	<meta charset="utf-8">
-	<title>节奏大师小游戏</title>
+	<title>摇一摇</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
 	<meta http-equiv="Cache-Control" content="max-age=0">
 	<meta name="apple-touch-fullscreen" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="Description" content="">
 	<meta name="Keywords" content="">
+	<link rel="stylesheet" href="app/css/base.css">
 	<link rel="stylesheet" href="app/css/main.css">
-	<script src="app/js/zepto.min.js"></script>
-	<script src="app/js/Pops.js"></script>
-	<script>
-  	  document.onreadystatechange = subSomething;
-  	  function subSomething() {
-            if (document.readyState == "complete") { //当页面加载状态为完全结束时进入 
-                	closeDiv();
-            }
-       }
-       $(function(){	
-		 	 show('app/images/loading.gif', '100', '100', '#fff');
-       })
-	</script>
 	</head>
 	<body >
-		<div class="game" id="game">
-			<img src="app/images/main.jpg"  />
-			<img src="app/images/logo2.png"  class="logo" />
-			<div class="track track1" ></div>			
-			<div class="track track2"></div>
-			<div class="track track3">	</div>
-			<div class="track track4"></div>
-			<div class="collection-btn" id="target-btn">
-				<div class="btn btn1 "></div>
-				<div class="btn btn2 "></div>
-				<div class="btn btn3 "></div>
-				<div class="btn btn4 "></div>
-			</div>
-			<div class="startGame"></div>
-			<div class="msg"></div>
+		<div class="container yaoyiyao" id="yaoyiyao">
+		  <div class="header">
+		    <a href="index.html">
+		      <img src="app/images/icon-1.png" class="return" />
+		    </a>
+		    <a href="index.html">
+		      <img src="app/images/icon-2.png" class="return-index" />
+		    </a>
+		    <h1>摇一摇</h1>
+		  </div>
+		  <div class="shake"></div>
+		  <div class="rule">
+		    <div class="ac-tit">
+		      <h2>活动内容</h2>
+		    </div>
+		    <div class="rule-content">
+		      <div class="ac-sum">
+		        <h3>活动主题：</h3>
+		        <p>万圣节送福利，精彩大奖等你拿！</p>
+		      </div>
+		      <div class="ac-sum">
+		        <h3>活动时间：</h3>
+		        <p>2014年10月20日-2014年11月11日</p>
+		      </div>
+		      <div class="ac-sum">
+		        <h3>活动奖项：</h3>
+		        <ul class="awards">
+		          <li>一等奖：获得欢乐谷免费门票2张</li>
+		          <li>二等奖：获得欢乐谷免费门票1张</li>
+		          <li>三等奖：获得鬼面一个</li>
+		        </ul>
+		      </div>
+		      <div class="ac-sum">
+		        <h3>兑换方法：</h3>
+		        <p>请凭截图兑换。</p>
+		      </div>
+		      <div class="copyright">
+		        本活动纯属虚构（技术支持：H君）
+		      </div>
+		    </div>
+		  </div>
 		</div>
-		<div class="mask"></div>
-		<script src="app/js/main.js"></script>
-		<script src="app/js/howler.min.js"></script>
+		<div  id="Loading" class="loading"></div>
+		<audio style="display:none" id="musicSwitch" preload="metadata"  controls="controls"  autoplay="false">
+		</audio>
+		<script src="app/js/zepto.min.js"></script>
+		<script src="app/js/shake.js"></script>
 		<script>
-			$('#game').Rhythm({
-				speed :100, 	//下落速度
-				startT :1000, 	//每个目标出现的时间
-				Countdown :60	//设置游戏时长
-			});
+			$('#yaoyiyao').shake();
 		</script>
 	</body>
 </html>

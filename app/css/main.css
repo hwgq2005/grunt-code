@@ -1,44 +1,174 @@
-@charset "UTF-8";
-/**
- * @authors H君 (qq:262281610)
- * @date    2014-10-17 17:12:51
- * @version 1.0
- */
-body, div, ul, li, a, img, h1, h2, h3, h4, h5, h6, p, input, table, tr, td { margin: 0; padding: 0; }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-body { font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
-img, input { border: 0; outline: none; }
-ul { list-style: none; }
-i, b { font-weight: normal; }
-.game { text-align: center; max-width: 640px; min-width: 320px; margin: 0 auto; position: relative; }
-.game img { width: 100%; vertical-align: middle; }
-.game .logo { width: 30%; position: absolute; top: 2%; left: 2%; }
-.game .countdown { position: absolute; top: 2%; left: 3%; color: #fff; }
-.game .score { color: #fff; position: absolute; top: 2%; right: 5%; font-size: 22px; }
-.track { background: url(../images/guidao2.png) no-repeat center 0; position: absolute; width: 15%; height: 76%; top: -2%; overflow: hidden; }
-.trackHigh { background: url(../images/guidao.png) no-repeat center 0; }
-.track1 { left: 23%; -webkit-transform: rotate(14deg); -moz-transform: rotate(14deg); -ms-transform: rotate(14deg); -o-transform: rotate(14deg); transform: rotate(14deg); }
-.track2 { left: 36%; -webkit-transform: rotate(4.5deg); -moz-transform: rotate(4.5deg); -ms-transform: rotate(4.5deg); -o-transform: rotate(4.5deg); transform: rotate(4.5deg); }
-.track3 { right: 36%; -webkit-transform: rotate(-4.5deg); -moz-transform: rotate(-4.5deg); -ms-transform: rotate(-4.5deg); -o-transform: rotate(-4.5deg); transform: rotate(-4.5deg); }
-.track4 { right: 23%; -webkit-transform: rotate(-14deg); -moz-transform: rotate(-14deg); -ms-transform: rotate(-14deg); -o-transform: rotate(-14deg); transform: rotate(-14deg); }
-.track .target { width: 30px; height: 30px; background: url(../images/logo.png) no-repeat center center; background-size: 0; margin: 0 auto; /* -webkit-animation: animation 4s ease-in 0 forwards;  */
-position: absolute; left: 50%; margin-left: -15px; }
-.track .btn { position: absolute; bottom: -5%; left: -14%; width: 100%; height: 10%; border-radius: 50%; background: #789D9F; border: 5px solid #AFCDD5; z-index: 9998; }
-.track .btn2, .track .btn3 { bottom: -4%; }
-.collection-btn .btn { position: absolute; width: 17%; height: 10%; border-radius: 50%; background: #789D9F; border: 5px solid #AFCDD5; top: 66%; }
-.collection-btn .btnHigh { border: 5px solid #fff; box-shadow: 0 0 30px #fff; }
-.collection-btn .btn1 { left: 4%; }
-.collection-btn .btn2 { left: 28%; }
-.collection-btn .btn3 { right: 28%; }
-.collection-btn .btn4 { right: 4%; }
-.startGame { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, .7); background-repeat: no-repeat; background-position: center 30%; background-size: 22%; z-index: 9999; min-width: 320px; max-width: 640px; margin: 0 auto; width: 100%; height: 100%; }
-.mask { width: 100%; height: 100%; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, .5); min-width: 320px; max-width: 640px; margin: 0 auto; display: none; }
-.msg { position: absolute; width: 60%; top: 20%; left: 15%; z-index: 999; background: rgba(51, 32, 120, .8); border: 1px solid #9A93A6; border-radius: 4px; color: #fff; padding: 8% 5%; line-height: 24px; font-size: 16px; text-align: center; display: none; }
-.msg p { line-height: 26px; font-weight: 700; }
-.msg .close { position: absolute; right: -10px; top: -10px; width: 30px; height: 30px; border-radius: 50%; display: inline-block; background: rgba(201, 199, 199, 1); border: 3px solid #fff; color: #747374; font-weight: 700; font-size: 18px; text-decoration: none; text-align: center; line-height: 30px; }
-.msg .line { width: 80%; margin: 8% auto; border-top: 1px solid #fff; }
-.msg .tip { font-size: 12px; text-align: left; font-weight: normal; }
-@-keyframes fadeIn {
-    0% { background-position: -100%; }
-    100% { background-position: 0 }
+/* line 10, ../../sass/main.scss */
+body {
+  background: url(../images/bg.jpg) no-repeat center center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+/* line 16, ../../sass/main.scss */
+.container {
+  padding-bottom: 20px;
+}
+/* line 18, ../../sass/main.scss */
+.container img {
+  max-width: 100%;
+}
+/* line 21, ../../sass/main.scss */
+.container .header {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  white-space: nowrap;
+  background: #0E0014;
+  text-align: center;
+}
+/* line 28, ../../sass/main.scss */
+.container .header h1 {
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+}
+/* line 33, ../../sass/main.scss */
+.container .header a > img {
+  width: 25px;
+}
+/* line 36, ../../sass/main.scss */
+.container .header .return {
+  float: left;
+  margin: 14px 0 0 10px;
+  display: inline;
+}
+/* line 41, ../../sass/main.scss */
+.container .header .return-index {
+  float: right;
+  margin: 10px 10px 0 0;
+  display: inline;
+}
+/* line 47, ../../sass/main.scss */
+.container .shake {
+  width: 50px;
+  height: 50px;
+  padding: 15%;
+  margin: 10% auto;
+  border-radius: 50%;
+  text-align: center;
+  border: 20px solid #FD6F89;
+  background: #ED5470 url(../images/shake.png) no-repeat 50% 50%;
+  background-size: 60%;
+}
+/* line 58, ../../sass/main.scss */
+.container .shake-music {
+  -webkit-animation: animations 0.2s linear 0 10 alternate;
+  -moz-animation: animations 0.2s linear 0 10 alternate;
+  -ms-animation: animations 0.2s linear 0 10 alternate;
+  -o-animation: animations 0.2s linear 0 10 alternate;
+  animation: animations 0.2s linear 0 10 alternate;
+}
+/* line 62, ../../sass/main.scss */
+.container .rule {
+  padding: 20px;
+  margin: 0 20px;
+  color: #fff;
+  background: rgba(113, 90, 93, 0.5);
+}
+/* line 67, ../../sass/main.scss */
+.container .rule .ac-tit {
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 70, ../../sass/main.scss */
+.container .rule .ac-tit h2 {
+  font-weight: normal;
+  font-size: 18px;
+}
+/* line 75, ../../sass/main.scss */
+.container .rule .rule-content {
+  color: #FAEDED;
+}
+/* line 77, ../../sass/main.scss */
+.container .rule .rule-content .ac-sum {
+  margin-bottom: 10px;
+}
+/* line 79, ../../sass/main.scss */
+.container .rule .rule-content .ac-sum h3 {
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #F2C4CB;
+}
+/* line 85, ../../sass/main.scss */
+.container .rule .rule-content .ac-sum p {
+  font-size: 14px;
+}
+/* line 88, ../../sass/main.scss */
+.container .rule .rule-content .ac-sum .awards li {
+  line-height: 22px;
+}
+/* line 92, ../../sass/main.scss */
+.container .rule .rule-content .copyright {
+  color: #E3D3CE;
+}
+
+/* line 98, ../../sass/main.scss */
+.loading, .awardsBox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #fff url(../images/loading.gif) no-repeat center 50%;
+}
+
+/* line 109, ../../sass/main.scss */
+.awardsBox {
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9997;
+  display: none;
+}
+/* line 114, ../../sass/main.scss */
+.awardsBox .awardsBoxCont {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  left: 10%;
+  padding: 20px;
+  background: #D6C9D3;
+  z-index: 9998;
+  color: #1D0E16;
+  text-align: center;
+  font-size: 20px;
+}
+/* line 125, ../../sass/main.scss */
+.awardsBox .awardsBoxCont .close {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: #64556C;
+  border-radius: 50%;
+  z-index: 9999;
+  text-decoration: none;
+  color: #fff;
+}
+/* line 138, ../../sass/main.scss */
+.awardsBox .awardsBoxCont p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@-webkit-keyframes animations {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 50% 46%;
+  }
+  100% {
+    background-position: 50% 42%;
+  }
 }
