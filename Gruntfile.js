@@ -157,6 +157,7 @@ module.exports = function(grunt) {
 	});
 
 	// 加载包含 "uglify" 任务的插件。
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
@@ -164,7 +165,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-include-replace');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+
+
 
 	// 默认被执行的任务列表。
 	grunt.registerTask('default', ['compass','uglify', 'concat','cssmin','copy','imagemin','includereplace']);
