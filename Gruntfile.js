@@ -150,8 +150,8 @@ module.exports = function(grunt) {
 		    }
 	    },
 		watch: {
-			files: ['sass/*.scss','app/js/*.js','app/js/*.js','app/css/*.css','app/images/*'],
-			tasks: ['compass','concat','uglify','cssmin','imagemin']
+			files: ['sass/*.scss','app/js/*.js','app/js/*.js','app/css/*.css','app/images/*','*'],
+			tasks: ['compass','concat','uglify','cssmin','imagemin','includereplace']
 		}
 
 	});
